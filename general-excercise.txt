@@ -1,1 +1,54 @@
 
+                                                   General Exercise - Answers
+1. Assess your knowledge level on the following languages (1 = none; 5 = expert):
+•	Vanilla JS  - 4
+•	jQuery - 4
+•	HTML/HTML5 - 5
+•	CSS/CSS3 - 5
+•	Ajax -3
+•	AngularJS - 3
+•	Bootstrap -4
+2. What is the width of a container with 100px of width and 5px of padding?
+Ans:  Width of a container = 100px of width + 5px of left padding + 5px of right padding.
+			        = 110px 
+If we use box-sizing: border-box property, it will allow us to include the padding and border in an element's total width and height.
+3. How to apply a click event to all paragraphs except for the last?
+Ans:
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+    <p>Paragraph 4</p>
+   <script>
+        $(document).ready(function () {
+            //selects all the paragraphs except last paragraph
+            $('p:not(:last)').on('click', function() { 
+               $(this).css("color","red"); 
+             });
+        });
+    </script>
+</body>
+</html>
+
+4. Why does the alert show "Jack" first and then undefined?
+function identity() {
+    var name = 'Jack';
+    alert(name);
+    return
+    name
+};
+var who = identity();
+alert(who)
+
+Answer:
+-When identify() function is invoked a local variable will be created with the name “jack”.
+-Hence immediately it will go to the next step and alerts the name “jack”(value of name is jack).
+-Next It will go to return statement. In our program return has nothing. So it does not return anything.
+-In javascript, statements/functions will not be executed after return statement.
+-So the value of “who” will be undefined. That’s why it will alert “undefined”. 
+
